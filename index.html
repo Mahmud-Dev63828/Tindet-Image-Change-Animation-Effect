@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>TinderEffect</title>
+    <link
+      href="https://cdn.jsdelivr.net/npm/remixicon@4.5.0/fonts/remixicon.css"
+      rel="stylesheet"
+    />
+    <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+    <style>
+      /* body এবং html ট্যাগের জন্য কালো ব্যাকগ্রাউন্ড */
+      body,
+      html {
+        margin: 0;
+        padding: 0;
+        background-color: rgb(54, 51, 51); /* পুরো পৃষ্ঠার ব্যাকগ্রাউন্ড কালো */
+        overflow: hidden; /* অতিরিক্ত স্ক্রল বার লুকানো */
+      }
+
+      .detailsWrapper {
+        background: linear-gradient(
+          to bottom,
+          transparent,
+          rgba(0, 0, 0, 0.937)
+        );
+      }
+
+      /* মোবাইল সাইজের ডিভ স্টাইল */
+      .mobile-container {
+        max-width: 428px;
+        height: 100vh;
+        margin: 0 auto;
+
+        background-color: black;
+        overflow: hidden;
+        position: relative;
+        border-radius: 20px;
+        box-shadow: 0 4px 10px rgba(0, 0, 0, 0.5);
+      }
+    </style>
+  </head>
+  <body>
+    <!-- মোবাইল সাইজের ডিভ -->
+    <div class="mobile-container">
+      <div class="w-full h-screen bg-black">
+        <div class="imageContainer w-full h-screen relative overflow-hidden">
+          <div
+            class="w-[130%] z-[3] mainCard top-1/2 left-1/2 -translate-y-1/2 -translate-x-1/2 absolute h-[130%]"
+          >
+            <img class="w-full h-full object-cover" src="" alt="" />
+          </div>
+          <div
+            class="w-[130%] z-[2] incomingCard top-1/2 left-1/2 -translate-y-1/2 -translate-x-1/2 absolute h-[130%]"
+          >
+            <img class="w-full h-full object-cover" src="" alt="" />
+          </div>
+        </div>
+        <!-- ===================> content part <=================== -->
+        <div
+          class="contentPart w-full absolute top-0 left-0 z-[4] h-screen font-['Helvetica'] flex flex-col justify-between"
+        >
+          <!-- navbar part -->
+          <div
+            class="navbar px-5 py-6 flex justify-between items-center text-white"
+          >
+            <div
+              class="prflImg w-[3.7rem] h-[3.7rem] rounded-full bg-green-600"
+            >
+              <img
+                class="w-[3.7rem] h-[3.7rem] rounded-full object-cover"
+                src="https://media.istockphoto.com/id/1919265357/photo/close-up-portrait-of-confident-businessman-standing-in-office.webp?a=1&b=1&s=612x612&w=0&k=20&c=-tzu2ednmWQlqCf-cBoaYuZPwAhzcEAPvfN1_ix9Vm8="
+                alt=""
+              />
+            </div>
+            <h3 class="text-lg">They Liked You</h3>
+            <div
+              class="chatIcon relative flex items-center justify-center w-[3.5rem] h-[3.5rem] bg-white/30 rounded-full text-[28px]"
+            >
+              <i class="ri-chat-1-fill"></i>
+              <div
+                class="badge flex items-center justify-center rounded-full absolute w-5 h-5 bg-[#FF4041] top-0 right-0 -translate-y-[5px] translate-x-[2px]"
+              >
+                <h5 class="font-[13px] text-xs">10</h5>
+              </div>
+            </div>
+          </div>
+          <!-------------------------- Details part -------------------------->
+          <div class="detailsWrapper w-full">
+            <div class="details px-5 py-6 w-full">
+              <div class="forAnimate icon location flex gap-4">
+                <i
+                  class="w-[1.6rem] h-[1.6rem] flex items-center rounded-full font-semibold justify-center bg-white ri-corner-left-up-fill"
+                ></i>
+                <h3 class="text-white">USA, California</h3>
+              </div>
+              <!-- name -->
+              <div class="forAnimate namePart gap-5 flex text-white mt-1">
+                <h1 class="font-regular name tracking-tighter text-7xl">
+                  Victory
+                </h1>
+                <h1
+                  class="font-regular age tracking-tighter text-7xl opacity-60"
+                >
+                  20
+                </h1>
+              </div>
+              <!-- tags part -->
+              <div class="forAnimate tags flex gap-2">
+                <div
+                  class="tag flex gap-3 items-center bg-white/30 px-3 py-1 rounded-full mt-3"
+                >
+                  <i class="text-white ri-music-2-line"></i>
+                  <h3 class="text-sm text-white">Music</h3>
+                </div>
+              </div>
+              <!-- bio -->
+              <div class="forAnimate bio text-white/80 mt-1.5">
+                <h3 class="text-2xl">Bio</h3>
+                <p class="text-lg mt-1">
+                  Lorem ipsum dolor sit amet consectetur adipisicing elit.
+                  Maiores, eveniet.
+                </p>
+              </div>
+              <!-- button -->
+              <div class="forAnimate buttonPart flex items-start mt-7 gap-2">
+                <button class="py-2 deny rounded-lg w-1/2 bg-white">
+                  <i
+                    class="text-3xl font-semibold text-red-500 ri-close-line"
+                  ></i>
+                </button>
+                <button class="py-2 accept rounded-lg w-1/2 bg-[#FF4041]">
+                  <i
+                    class="text-3xl font-semibold text-white ri-poker-hearts-fill"
+                  ></i>
+                </button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <script
+      src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.7/gsap.min.js"
+      integrity="sha512-f6bQMg6nkSRw/xfHw5BCbISe/dJjXrVGfz9BSDwhZtiErHwk7ifbmBEtF9vFW8UNIQPhV2uEFVyI/UHob9r7Cw=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    ></script>
+    <script src="main.js"></script>
+  </body>
+</html>
